@@ -143,6 +143,37 @@ let swiperTestimonial = new Swiper(".testimonial__container", {
     }
 });
 
+/*==================== CONTACT FORM ====================*/
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwT5o81Bw3M_4buiQGR2N-94kLMYLtAKP98Qec4DtS9QALvj9ifzBXXQGjVgwNabBSKTA/exec';
+const form = document.forms['submit-to-google-sheet'];
+const msg = document.getElementById("msg");
+
+// Check if form and msg exist before adding event listener
+if (form && msg) {
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(response => {
+                if (response.ok) {
+                    msg.innerHTML = "message sent successfully";
+                    setTimeout(function () {
+                        msg.innerHTML = "";
+                    }, 3000);
+                    form.reset();
+                } else {
+                    throw new Error('Network response was not ok.');
+                }
+            })
+            .catch(error => {
+                console.error('Error!', error.message);
+                msg.innerHTML = "An error occurred. Please try again later.";
+            });
+    });
+} else {
+    console.error("Form or message element not found.");
+}
+
+
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll('section[id]')
 function scrollActive() {
