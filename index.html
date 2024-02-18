@@ -825,31 +825,35 @@
                     </div>
                 </div>
 
-                <form action="" class="contact__form grid">
+                <form name="submit-to-google-sheet" class="contact__form grid">
                     <div class="contact__inputs grid">
                         <div class="contact__content">
-                            <label for="" class="contact__label">Name</label>
-                            <input type="text" class="contact__input">
+                            <label for="name" class="contact__label">Name</label>
+                            <input type="text" class="contact__input" name="Name" id="name">
                         </div>
                         <div class="contact__content">
-                            <label for="" class="contact__label">Email</label>
-                            <input type="email" class="contact__input">
+                            <label for="email" class="contact__label">Email</label>
+                            <input type="Email" class="contact__input" name="Email" id="email">
                         </div>
                         <div class="contact__content">
-                            <label for="" class="contact__label">Project</label>
-                            <input type="text" class="contact__input">
+                            <label for="project" class="contact__label">Project</label>
+                            <input type="text" class="contact__input" name="Project" id="project">
                         </div>
                         <div class="contact__content">
-                            <label for="" class="contact__label">Message</label>
-                            <textarea name="" id="" cols="30" rows="7" class="contact__input"></textarea>
+                            <label for="message" class="contact__label">Message</label>
+                            <textarea name="Message" id="message" cols="30" rows="7" class="contact__input"></textarea>
                         </div>
+                        <span id="msg"></span>
                     </div>
 
                     <div>
-                        <a href="#contact" class="button button--flex">
+                        <!-- <a type="submit" href="#contact" class="button button--flex">
                             Send Message
                             <i class="uil uil-message button__icon"></i>
-                        </a>
+                        </a> -->
+                        <button type="submit" class="button button--flex">Sent Message
+                            <i class="uil uil-message button__icon"></i>
+                        </button>
                     </div>
                 </form>
             </div>
